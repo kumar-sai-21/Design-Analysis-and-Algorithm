@@ -1,13 +1,13 @@
 // C program for Naive Pattern Searching algorithm
 #include <stdio.h>
 #include <string.h>
-char txt[20];
-char pat[20];
+char text[20];
+char pattern[20];
 
 void search()
 {
-	int M = strlen(pat);
-	int N = strlen(txt);
+	int M = strlen(pattern);
+	int N = strlen(text);
 
 	/* A loop to slide pat[] one by one */
 	for (int i = 0; i <= N - M; i++)
@@ -16,7 +16,7 @@ void search()
 
 		/* For current index i, check for pattern match */
 		for (j = 0; j < M; j++)
-			if (txt[i + j] != pat[j])
+			if (text[i + j] != pattern[j])
 				break;
 				if (j == M) // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
 				printf("Pattern found at index %d \n", i);
@@ -27,9 +27,9 @@ void search()
 int main()
 {
 	printf("Enter the 1st string\n");
-	scanf("%s",txt);
+	scanf("%s",text);
 	printf("ENter the second string\n" );
-	scanf("%s",pat );
+	scanf("%s",pattern );
 	search();
 	return 0;
 }
