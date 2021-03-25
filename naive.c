@@ -26,9 +26,9 @@ void search()
 /* Driver program to test above function */
 int main()
 {
-	printf("Enter the 1st string\n");
+	printf("Enter the text string\n");
 	scanf("%s",text);
-	printf("ENter the second string\n" );
+	printf("ENter the pattern\n" );
 	scanf("%s",pattern );
 	search();
 	return 0;
