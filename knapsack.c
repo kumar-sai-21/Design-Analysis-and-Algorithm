@@ -1,3 +1,7 @@
+//knapsack problem
+
+//sai kumar satapathy
+
 #include<stdio.h>
 float prow[20];
 float p[20];
@@ -17,10 +21,11 @@ void knapsack(int m,int n)
 		}
 		x[i]=1;
 		m=m-prow[i];
+		total_profit=total_profit+p[i];
 	}
 	if(i<n)
 	{
-		x[i]=(float)(m)/prow[i];
+		x[i]=(m)/prow[i];
 		total_profit=total_profit+(float)x[i]*p[i];
 	//printf("the max profit is %f",total_profit);
 	}
@@ -36,9 +41,10 @@ int main()
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
 	{
-		printf("Enter the weight of item %d ",i);
+		printf("Product %d\n",i+1 );
+		printf("Enter the weight of item %d :",i+1);
 		scanf("%f",&prow[i]);
-		printf("enter the profit in product %d ",i);
+		printf("enter the profit in product %d :",i+1);
 		scanf("%f",&p[i]);
 		ratio[i]=p[i]/prow[i];
 		printf("%f\n",ratio[i]);
@@ -58,11 +64,10 @@ int main()
 				prow[j+1]=temp;
 
 				temp =p[j];
-				p[j]=p[j+1];
+	 			p[j]=p[j+1];
 				p[j+1]=temp;
 			}
 		}
 	}
 	knapsack(weight,n);
 }
-
