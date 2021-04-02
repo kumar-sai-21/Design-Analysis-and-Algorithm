@@ -1,10 +1,4 @@
-/*
-   WAP to perform matric chain multiplication
-   Sai Kumar Satapathy
-   Roll No 4
-   SIC 190310248
 
-*/
 
 #include<stdio.h>
 int s[20][20];
@@ -71,4 +65,3 @@ int main()
 	print_paren(i, j);
 	printf("\n");
 }
-
