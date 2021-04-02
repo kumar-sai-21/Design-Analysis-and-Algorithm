@@ -1,7 +1,3 @@
-// Greedy fractional knapsack
-
-// Subhrajyoti Behera
-// C2_30
 
 
 #include "stdio.h"
