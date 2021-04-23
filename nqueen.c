@@ -1,11 +1,8 @@
 #include <stdio.h>
-
 //Number of queens
 int N;
-
 //chessboard
 int board[100][100];
-
 //function to check if the cell is attacked or not
 int is_attack(int i,int j)
 {
@@ -34,20 +31,15 @@ int is_attack(int i,int j)
 int N_queen(int n)
 {
   int i,j;
-  //if n is 0, solution found
   if(n==0)
       return 1;
   for(i=0;i<N;i++)
   {
       for(j=0;j<N;j++)
       {
-            //checking if we can place a queen here or not
-            //queen will not be placed if the place is being attacked
-            //or already occupied
           if((!is_attack(i,j)) && (board[i][j]!=1))
           {
               board[i][j] = 1;
-                //recursion
                 //wether we can put the next queen with this arrangment or not
               if(N_queen(n-1)==1)
               {
@@ -62,22 +54,18 @@ int N_queen(int n)
 
 int main()
 {
-  //taking the value of N
   printf("Enter the value of N for NxN chessboard\n");
   scanf("%d",&N);
   int arr1[N];
   int i,j;
-  //setting all elements to 0
-  for(i=0;i<N;i++)
+  for(i=0;i<N;i++)//setting all elements to 0
   {
     for(j=0;j<N;j++)
     {
       board[i][j]=0;
     }
   }
-  //calling the function
   N_queen(N);
-  //printing the matix
   int e=0;
   for(i=0;i<N;i++)
   {
@@ -93,6 +81,17 @@ int main()
     for(j=0;j<N;j++)
     {
       if (board[i][j])
+      {
+        printf("%d\t",j+1);
+      }
+    }
+  }
+  printf("\n" );
+  for(i=0;i<N;i++)
+  {
+    for(j=0;j<N;j++)
+    {
+      if (board[j][i])
       {
         printf("%d\t",j+1);
       }
